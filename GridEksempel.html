@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Grid eksempel</title>
+    <style>
+        .h1{
+        font-size: 22px;        
+        }
+        body {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        div.page {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 125px 10fr 30px;
+            grid-template-areas: 'filler1 header' 
+                                 'menu mainContent'
+                                 'footer footer';
+        }
+
+        div.header {
+            background-color: #97cba9;
+            grid-area: header;
+            border-bottom: 5px solid #668ba4;
+            font-size: 40px;
+            text-align: center;
+            padding-top: 1em;
+        }
+
+        div.menu {
+            background-image: linear-gradient(to right, #668ba4 70%, #dde0ab) ;
+            grid-area: menu;
+        }
+
+        div.mainContent {
+            background-color: #dde0ab;
+            grid-area: mainContent;
+            font-size: 1.5rem;
+            font-family: sans-serif;
+            padding: 3rem;
+            padding-right: 6rem;
+        }
+
+        div.footer {
+            background-color: #97cba9;
+            grid-area: footer;
+            border-top: 5px solid #668ba4
+        }
+
+        div.filler1 {
+            background-image: linear-gradient(45deg, #668ba4 43% , #97cba9 60%);
+            grid-area: filler1;
+            border-bottom: 5px solid #668ba4
+        }
+
+        @media only screen and (max-width: 600px) {
+            div.page {
+                grid-template-columns: 1fr;
+                grid-template-rows: 20px 1fr 4fr 20px;
+                grid-template-areas: 'header' 
+                                     'menu'
+                                     'mainContent'
+                                     'footer';
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class=filler1></div>
+        <div class=filler2></div>
+        <div class="header" h1>Header</div>
+        <div class="menu">Menu</div>
+        <div class="mainContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet imperdiet ligula. In arcu magna, imperdiet nec nisi eu, porta dapibus ex. Phasellus rutrum libero ut scelerisque suscipit. Sed rutrum ullamcorper nibh, id porttitor turpis consequat ac. Vivamus aliquet nunc odio, vel facilisis dolor vulputate eget. In hac habitasse platea dictumst. Vivamus pellentesque congue orci, nec fringilla risus auctor sit amet. Donec vehicula, ante quis pharetra pharetra, nibh felis commodo ante, vitae venenatis lorem dolor a nulla. Curabitur ut tincidunt lorem. Proin condimentum tortor eu fringilla hendrerit. Cras quis erat turpis. Integer laoreet nulla in consequat ornare.
+
+            <p></p>Maecenas eget tristique erat. Cras nunc tellus, rhoncus eu nibh eu, pulvinar pretium lacus. Nullam convallis enim nec nunc cursus, et volutpat nisi pulvinar. Maecenas sit amet purus id est pretium efficitur at eu diam. Vestibulum vitae lectus est. Morbi pulvinar risus at pellentesque tristique. Suspendisse potenti. Nulla id libero ac massa accumsan vestibulum id at nisi. Nunc aliquam pharetra libero, sit amet accumsan ipsum suscipit sed.</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
